@@ -4,10 +4,7 @@ import { CarsService } from './cars.service';
 import { CarDto } from './dto/car.dto';
 import mongoose, { UpdateWriteOpResult } from 'mongoose';
 import { Car, PaginatedCars } from './schemas/cars.schema';
-import {
-  NotFoundException,
-  UnprocessableEntityException,
-} from '@nestjs/common';
+import { NotFoundException } from '@nestjs/common';
 import {
   carMock,
   paginatedCarsMock,
