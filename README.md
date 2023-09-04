@@ -29,7 +29,6 @@
 ```shell 
 # up mongodb container or via docker-compose cli (27017 default port mapping)
 make up
-
 ```
 
 ```shell
