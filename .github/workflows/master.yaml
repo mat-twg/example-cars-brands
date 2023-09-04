@@ -38,7 +38,7 @@ jobs:
         run: |
           docker load --input /tmp/cars-brands.tar
           docker run cars-brands:latest yarn lint
-  test:
+  test-unit:
     runs-on: ubuntu-latest
     needs: lint
     steps:
@@ -47,13 +47,32 @@ jobs:
         with:
           name: cars-brands
           path: /tmp
-      - name: Run Jest
+      - name: Run test:unit
         run: |
           docker load --input /tmp/cars-brands.tar
           docker run cars-brands:latest yarn test
+  test-e2e:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Download docker image
+        uses: actions/download-artifact@v3
+        with:
+          name: cars-brands
+          path: /tmp
+      - name: Up MongoDB
+        run: docker-compose -f "docker-compose.yaml" up -d --build
+      - name: Run test:e2e
+        run: |
+          docker load --input /tmp/cars-brands.tar
+          docker run cars-brands:latest yarn test:e2e
   build:
     runs-on: ubuntu-latest
-    needs: test
+    needs:
+      - test-unit
+      - test-e2e
     steps:
       - name: Download docker image
         uses: actions/download-artifact@v3
