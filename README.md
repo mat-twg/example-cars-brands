@@ -1,6 +1,6 @@
 ## Example Cars-Brand (nestjs + mongoose)
 
-![workflow](https://github.com/mat-twg/example-cars-brands/actions/workflows/master.yaml/badge.svg)
+[![workflow](https://github.com/mat-twg/example-cars-brands/actions/workflows/master.yaml/badge.svg)](https://github.com/mat-twg/example-cars-brands/actions/workflows/master.yaml?result=latest)
 
 >Разработать клиент-серверное решение с использованием typescript и node.js для хранения и
 >
@@ -27,11 +27,14 @@
 ### Launch
 
 ```shell 
-make up # up mongodb container 27017 default port mapping
+# up mongodb container or via docker-compose cli (27017 default port mapping)
+make up
+
 ```
 
 ```shell
-yarn start # http://localhost:3000 
+# http://localhost:3000 
+yarn start
 ```
 
 ![main](./assets/main.png)
@@ -40,15 +43,18 @@ yarn start # http://localhost:3000
 ### Tests
 
 ```shell
-yarn test:e2e # e2e tests
+# e2e tests
+yarn test:e2e
 ```
 
 ```shell
-yarn test # unit tests
+# unit tests
+yarn test
 ```
 
 ```shell
-yarn test:cov # coverage
+# coverage
+yarn test:cov
 ```
 
 ![cov](./assets/cov.png)
