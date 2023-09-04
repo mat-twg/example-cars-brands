@@ -2,7 +2,7 @@ import * as request from 'supertest';
 import { getModel, httpServer } from './app.e2e-spec';
 import { Model } from 'mongoose';
 import { BrandDto } from '../src/api/brands/dto/brand.dto';
-import { Brand, BrandsList } from '../src/api/brands/schemas/brands.schema';
+import { Brand } from '../src/api/brands/schemas/brands.schema';
 import { CarDto } from '../src/api/cars/dto/car.dto';
 import { Car, CarsList } from '../src/api/cars/schemas/cars.schema';
 
