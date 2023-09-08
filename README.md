@@ -32,10 +32,10 @@ make up
 ```
 
 ```shell
-# http://localhost:3000/api 
+# http://localhost:3000/doc 
 yarn start
 ```
-Swagger available at `/api` and specs at `/api-json` `/api-yaml`
+Swagger available at `/doc` and specs at `/doc-json` `/doc-yaml`
 
 ![main](./assets/swagger.png)
 
