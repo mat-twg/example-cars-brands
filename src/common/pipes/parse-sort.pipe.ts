@@ -29,11 +29,13 @@ export class ParseSortPipe implements PipeTransform {
     if (!Array.isArray(value)) {
       value = [value];
     }
-    const results = value.map((item) =>
-      this.allowTransformId
-        ? this.transformId(this.parse(item))
-        : this.parse(item),
-    );
+    const results = value
+      .filter((item) => item !== '')
+      .map((item) =>
+        this.allowTransformId
+          ? this.transformId(this.parse(item))
+          : this.parse(item),
+      );
     return Object.assign({}, ...results);
   }
 }
